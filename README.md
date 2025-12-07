@@ -39,8 +39,7 @@ Project_final/
 │   ├── 4_Hyperparam_tuning_XGBoost/
 │   ├── 5_Predicting_future_date/
 │   ├── 6_Prize_orientated_program/
-│   ├── 7_Statistical_analysis/
-│   └── 9999_Archived/
+│   └── 7_Statistical_analysis/
 │
 ├── Output/
 │   ├── 1_Compiling_data/
@@ -172,19 +171,12 @@ The project applies a structured, multi-step data mining pipeline to predict far
 - Not a fully optimized system, but serves as a proof-of-concept for data-driven inspection scheduling.
 
 
-7. Archival / Exploratory Notebooks
 
-- Maintained a 9999_Archived folder to document:
 
-- Alternative modeling approaches
+This pipeline combines data preprocessing, feature engineering, exploratory analysis, predictive modeling, and optimization in an attempt to deliver actionable insights into fare evasion patterns and inspection strategy.
 
-- Failed attempts or dead ends
 
-- Iterative improvements during feature engineering and model tuning
-
-- This pipeline combines data preprocessing, feature engineering, exploratory analysis, predictive modeling, and optimization in an attempt to deliver actionable insights into fare evasion patterns and inspection strategy.
-
-- After the lack-luster results of the ML process, a simplistic statistical approach was breifly explored in 7_Statistical_analysis/
+After the lack-luster results of the ML process, a simplistic statistical approach was breifly explored in 7_Statistical_analysis/
 
 
 ## Reproducibility & System Requirements
@@ -215,8 +207,6 @@ The repository includes sufficient explanations throughout the codebase to help 
 
 
 Some notebooks produce intermediate or exploratory results not shown in the final poster—these are included intentionally to demonstrate the full scope of work completed.
-
-The 9999_Archived folder contains exploratory notebooks created throughout the development of the project. These notebooks document early experiments, alternative modelling attempts, and analytical directions that were ultimately revised or replaced.
 
 They are included to illustrate the complex and iterative nature of the project, as well as the methodological challenges and dead ends encountered along the way. While not part of the final analysis pipeline, they provide valuable context regarding the reasoning, trial-and-error, and decision-making that shaped the final models and workflow.
 
