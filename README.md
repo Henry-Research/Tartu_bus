@@ -94,6 +94,8 @@ Route density per stop : The baseline number of different bus lines that serve a
 
 These features aim to capture passenger flow dynamics and network structure.
 
+DUE TO THE SIZE of the Ticket_validations data set (> 1 Gbp) it cannot be uploaded to git, instead a subset of the data can be found at /validations_by_stops_subset.csv
+
 **GTFS**
 gtfs/ contains the General Transit Feed Specification datasets describing the full Tartu (and broader Estonian) bus network.
 Relevant components include:
