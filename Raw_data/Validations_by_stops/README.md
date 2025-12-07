@@ -3,6 +3,8 @@
 This is closed-source data which was kindly leased by the Tartu inner city bus administration. 
 Primary point of contact and provided of data was Iver Olaf
 
+DUE TO THE SIZE of the Ticket_validations data set (> 1 Gbp) it cannot be uploaded to git, instead a subset of the data can be found at /validations_by_stops_subset.csv
+
 ## Overview
 This dataset contains **ticket validation records** for the Tartu inner-city bus network from **01 January 2016 to 30 November 2024**.  
 Each row represents the number of passengers validating tickets at a specific stop during a specific trip.  
