@@ -119,72 +119,72 @@ The project applies a structured, multi-step data mining pipeline to predict far
 
 1. Data Compilation, Preprocessing, Cleaning and Extracting
 
-Applying logical functions in order to compile "ticket_inspections" into a more usable and logical format.
+- Applying logical functions in order to compile "ticket_inspections" into a more usable and logical format.
 
-Cleaned and standardized timestamps, stop identifiers, and line codes.
+- Cleaned and standardized timestamps, stop identifiers, and line codes.
 
-Performed logical operations for imputations of missing data including pure logical based and a k-nearest neighborhood approach.
+- Performed logical operations for imputations of missing data including pure logical based and a k-nearest neighborhood approach.
 
 
 2. Feature Engineering
 
-Merged multiple heterogeneous datasets in an attempt to increase predictive performance 
+- Merged multiple heterogeneous datasets in an attempt to increase predictive performance 
 
-Including spatial locations based on neighborhood binning.
+- Including spatial locations based on neighborhood binning.
 
-Temporal features : Time-of-day, day-of-week.
+- Temporal features : Time-of-day, day-of-week.
 
-Stop popularity based on baseline coverage.
+- Stop popularity based on baseline coverage.
 
 
 3. Exploratory Data Analysis (EDA)
 
-Evaluationg temporal fare evasion.
+- Evaluationg temporal fare evasion.
 
-Investigating fare evasion rate within stop codes. 
+- Investigating fare evasion rate within stop codes. 
 
 
 4. Machine Learning Approaches
 
-Model Selection: Tested multiple supervised models for fare evasion prediction:
+- Model Selection: Tested multiple supervised models for fare evasion prediction:
 
 - Random Forest (RF)
 - XGBoost
 - Multi-layer Perceptron regression
 - Multi-layer Perceptron classification
-- 
-Performance Evaluation: Used metrics such as RMSE, R², and auc_roc to compare models.
+  
+- Performance Evaluation: Used metrics such as RMSE, R², and auc_roc to compare models.
 
-Hyperparameter Tuning: Performed intelligence hyper parameter tuning with OPTUNA on XGBoost, to optimize predictive accuracy.
+- Hyperparameter Tuning: Performed intelligence hyper parameter tuning with OPTUNA on XGBoost, to optimize predictive accuracy.
 
 
 5. Investigating granularity importance 
 
-Explored different temporal and spatial granularities to maximize prediction performance.
+- Explored different temporal and spatial granularities to maximize prediction performance.
 
 
 6. Route Optimization (Prize-oriented Program)
 
-Developed a reward inspection routing program to suggest sequences of stops that maximize expected fare evaders caught.
+- Developed a reward inspection routing program to suggest sequences of stops that maximize expected fare evaders caught.
 
-Integrated predicted evasion counts, travel distances, and inspection durations.
+- Integrated predicted evasion counts, travel distances, and inspection durations.
 
-Not a fully optimized system, but serves as a proof-of-concept for data-driven inspection scheduling.
+- Not a fully optimized system, but serves as a proof-of-concept for data-driven inspection scheduling.
 
 
 7. Archival / Exploratory Notebooks
 
-Maintained a 9999_Archived folder to document:
+- Maintained a 9999_Archived folder to document:
 
-Alternative modeling approaches
+- Alternative modeling approaches
 
-Failed attempts or dead ends
+- Failed attempts or dead ends
 
-Iterative improvements during feature engineering and model tuning
+- Iterative improvements during feature engineering and model tuning
 
-This pipeline combines data preprocessing, feature engineering, exploratory analysis, predictive modeling, and optimization in an attempt to deliver actionable insights into fare evasion patterns and inspection strategy.
+- This pipeline combines data preprocessing, feature engineering, exploratory analysis, predictive modeling, and optimization in an attempt to deliver actionable insights into fare evasion patterns and inspection strategy.
 
-After the lack-luster results of the ML process, a simplistic statistical approach was breifly explored in 7_Statistical_analysis/
+- After the lack-luster results of the ML process, a simplistic statistical approach was breifly explored in 7_Statistical_analysis/
 
 
 ## Reproducibility & System Requirements
@@ -199,7 +199,7 @@ Most steps run efficiently on typical modern computers. The only exception is th
 ## To Replicate the Analysis
 Clone or download the repository:
 
-- git clone https://github.com/your-repo-name.git
+- git clone https://github.com/Henry-Research/Tartu_bus.git
 - Adjust file paths inside the notebooks to match your local directory structure.
 
 Run the notebooks in numerical order, beginning with the 01_ folder.
