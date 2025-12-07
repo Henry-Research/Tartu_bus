@@ -39,8 +39,8 @@ Project_final/
 │   ├── 4_Hyperparam_tuning_XGBoost/
 │   ├── 5_Predicting_future_date/
 │   ├── 6_Prize_orientated_program/
-│   └── 7_Statistical_analysis/
-│   ├── 9999_Archived 
+│   ├── 7_Statistical_analysis/
+│   └── 9999_Archived/
 │
 ├── Output/
 │   ├── 1_Compiling_data/
@@ -49,6 +49,7 @@ Project_final/
 │   ├── 4_Hyperparam_tuning_XGBoost/
 │   ├── 5_Predicting_future_date/
 │   └── 6_Prize_orientated_program/
+│
 └── Raw_data/
     ├── gtfs/
     ├── Neighbourhoods/
