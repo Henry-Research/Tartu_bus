@@ -170,7 +170,10 @@ The project applies a structured, multi-step data mining pipeline to predict far
 
 - Not a fully optimized system, but serves as a proof-of-concept for data-driven inspection scheduling.
 
+6. Statistical approach
 
+- A breif delve into a old-school statistical based approach
+- Identifying bus stops with a high number of mean unvalidated indivudals with high confidence scores
 
 
 This pipeline combines data preprocessing, feature engineering, exploratory analysis, predictive modeling, and optimization in an attempt to deliver actionable insights into fare evasion patterns and inspection strategy.
