@@ -17,7 +17,7 @@ Identifying patterns of fare evasion across the Tartu bus network
 - Maximizing the expected number of evaders caught per inspection visit
 
 
-All analyses, figures, and ML models in this repository directly support these goals. However, the repository does not represent a fully optimized inspection-routing system. Further work is required to improve fare-evasion prediction accuracy and to develop a more robust, end-to-end route-optimization framework for inspection scheduling. However, given the exploratory objective provided by the Tartu city government, the analysis still represents a successful project. Please read the commentary found within the final header "Comments on Approach Taken – Limitations, Regrets, and Future Directions" on a more detailed discussion the limitatatoins and regrets of the approach, and a discussion of future steps. 
+All analyses, figures, and ML models in this repository directly support these goals. However, the repository does not represent a fully optimized inspection-routing system. Further work is required to improve fare-evasion prediction accuracy and to develop a more robust, end-to-end route-optimization framework for inspection scheduling. However, given the exploratory objective provided by the Tartu city government, the analysis still represents a successful project. Please read the commentary found within the final header "Comments on Approach Taken – Limitations, Regrets, and Future Directions" on a more detailed discussion the limitations and regrets of the approach, and a discussion of future steps. 
 
 
 ## Repository structure 
@@ -267,7 +267,7 @@ b) Consider fully statistical approaches
 
 c) Incorporate passenger-flow features from the ticket-validations dataset
 - A heatmap of ticket validations over time would reveal the flow of passengers through the city.
-- 
+
 For example:
 Morning: peaks at peripheral stops
 Evening: flows concentrate toward central stops
@@ -276,7 +276,7 @@ Because the validations dataset includes bus line IDs, we can estimate how passe
 
 This could become a highly informative feature when modelling both fare evasion and optimal inspection routing.
 
-11. Route Optimisation Algorithm – Future Work
+5. Route Optimisation Algorithm – Future Work
 
 The current routing method is functional but far from optimal. Future versions should rely on OR-Tools, which provides industrial-grade algorithms for routing and optimisation.
 
