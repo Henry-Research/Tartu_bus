@@ -10,7 +10,6 @@ The Tartu city government is interested in understanding the feasibility of proa
 The objective of this project is to increase the efficiency of the ticket-inspection system by:
 Identifying patterns of fare evasion across the Tartu bus network
 
-
 - Quantifying spatial and temporal differences in evasion rates
 
 - Developing data-driven strategies to direct inspectors
@@ -18,7 +17,7 @@ Identifying patterns of fare evasion across the Tartu bus network
 - Maximizing the expected number of evaders caught per inspection visit
 
 
-All analyses, figures, and ML models in this repository directly support these goals. However, the repository does not represent a fully optimized inspection-routing system. Further work is required to improve fare-evasion prediction accuracy and to develop a more robust, end-to-end route-optimization framework for inspection scheduling. However, given the exploratory objective provided by the Tartu city government, the analysis still represents a successful project. 
+All analyses, figures, and ML models in this repository directly support these goals. However, the repository does not represent a fully optimized inspection-routing system. Further work is required to improve fare-evasion prediction accuracy and to develop a more robust, end-to-end route-optimization framework for inspection scheduling. However, given the exploratory objective provided by the Tartu city government, the analysis still represents a successful project. Please read the commentary found within the final header "Comments on Approach Taken – Limitations, Regrets, and Future Directions" on a more detailed discussion the limitatatoins and regrets of the approach, and a discussion of future steps. 
 
 
 ## Repository structure 
@@ -170,7 +169,7 @@ The project applies a structured, multi-step data mining pipeline to predict far
 
 - Not a fully optimized system, but serves as a proof-of-concept for data-driven inspection scheduling.
 
-6. Statistical approach
+7. Statistical approach
 
 - A breif delve into a old-school statistical based approach
 - Identifying bus stops with a high number of mean unvalidated indivudals with high confidence scores
@@ -214,3 +213,77 @@ Some notebooks produce intermediate or exploratory results not shown in the fina
 They are included to illustrate the complex and iterative nature of the project, as well as the methodological challenges and dead ends encountered along the way. While not part of the final analysis pipeline, they provide valuable context regarding the reasoning, trial-and-error, and decision-making that shaped the final models and workflow.
 
 
+
+## Comments on Approach Taken – Limitations, Regrets, and Future Directions
+
+This project is an excellent example of the exploratory nature of data science. Not every methodological choice ends up being optimal, but each step contributes valuable insights. Several aspects of the approach taken—especially around temporal modelling and spatiotemporal reduction—deserve comment, clarification, and reconsideration.
+
+1. Temporality Appears to Have Very Limited Impact
+
+The results from /Notebooks/ML_performance/Pipe2 show that incorporating temporal features improves machine-learning performance very little. Similarly, the output from /Notebooks/7_Statistical_analysis/Pipe1 demonstrates that including temporal features barely changes the coefficient of variation. Together, these observations suggest that the way temporality was encoded here is either:
+
+a) Irrelevant, or
+b) Not modelled in the right way.
+
+If (a) is true, it challenges one of the project’s foundational assumptions—that fare evasion is temporally structured in a way that meaningfully affects prediction.
+
+However, /Notebooks/1_Compiling_data/Pipe3 clearly shows that fare evasion does have temporal structure. The key assumption we made was that each bus stop has its own unique temporal × fare-evasion relationship. If this assumption is false—i.e., if all stops share a broadly similar temporal pattern—then encoding temporality at the stop-level is unnecessary and will appear uninformative in modelling.
+
+This is a major point that should have been investigated earlier.
+
+3. Current Temporal Binning May Be Suboptimal
+4. 
+If scenario (b) is true, then our modelling approach is failing to capture the true temporal dimensionality of fare evasion. Uniform 30-minute and 60-minute bins may be too coarse, too arbitrary, or simply misaligned with human transit behaviour.
+
+A more realistic approach might include:
+- Morning / Midday / Afternoon / Evening bins
+- Rush-hour vs non-rush-hour categorisation
+- Data-driven segmentation based on peaks in ridershi
+- Unequal time bins that reflect natural behaviour, not clock boundaries
+  
+These may better capture the actual temporal dynamics influencing fare evasion.
+
+6. Limitations of the Spatiotemporal Reduction Approach
+7. 
+The spatial-temporal reduction used here increases statistical power by aggregating data at the neighbourhood level, but this comes at the cost of losing spatial resolution. Neighbourhoods are broad, and potentially obscure meaningful patterns between specific stops.
+
+An improved approach could:
+- Maintain unique stop IDs, while
+- Adding neighbourhood (or sub-neighbourhood) as a hierarchical feature, rather than a replacement
+- Or define custom spatial clusters that better balance power and resolution
+  
+This would preserve fine-grained stop-level variation while still benefiting from aggregated features.
+
+9. Additional Features and Alternative Approaches
+    
+If repeating the analysis, the following should be prioritised:
+a) More detailed investigation of temporal dimensionality
+Test whether temporal features genuinely improve prediction in either ML or statistical frameworks.
+
+Explore non-uniform or behaviourally informed time-bins.
+b) Consider fully statistical approaches
+It may be possible to model fare evasion using classical statistical methods if temporal differences are subtle but systematic.
+
+c) Incorporate passenger-flow features from the ticket-validations dataset
+
+A heatmap of ticket validations over time would reveal the flow of passengers through the city.
+
+For example:
+Morning: peaks at peripheral stops
+Evening: flows concentrate toward central stops
+
+Because the validations dataset includes bus line IDs, we can estimate how passengers enter the network and approximate their likely movement patterns between stops.
+
+This could become a highly informative feature when modelling both fare evasion and optimal inspection routing.
+
+11. Route Optimisation Algorithm – Future Work
+
+The current routing method is functional but far from optimal. Future versions should rely on OR-Tools, which provides industrial-grade algorithms for routing and optimisation.
+
+The most challenging improvement will be designing a system that:
+- Minimises predictable patterns
+- Ensures inspectors take different routes on different days
+- Avoids allowing fare evaders to learn the inspection schedule
+- Capturing a large variety of bus lines
+  
+This requires optimisation across multiple days, possibly weeks, not just within a single day.
