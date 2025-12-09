@@ -231,8 +231,8 @@ However, /Notebooks/1_Compiling_data/Pipe3 clearly shows that fare evasion does 
 
 This is a major point that should have been investigated earlier.
 
-3. Current Temporal Binning May Be Suboptimal
-4. 
+2. Current Temporal Binning May Be Suboptimal
+   
 If scenario (b) is true, then our modelling approach is failing to capture the true temporal dimensionality of fare evasion. Uniform 30-minute and 60-minute bins may be too coarse, too arbitrary, or simply misaligned with human transit behaviour.
 
 A more realistic approach might include:
@@ -243,8 +243,8 @@ A more realistic approach might include:
   
 These may better capture the actual temporal dynamics influencing fare evasion.
 
-6. Limitations of the Spatiotemporal Reduction Approach
-7. 
+3. Limitations of the Spatiotemporal Reduction Approach
+   
 The spatial-temporal reduction used here increases statistical power by aggregating data at the neighbourhood level, but this comes at the cost of losing spatial resolution. Neighbourhoods are broad, and potentially obscure meaningful patterns between specific stops.
 
 An improved approach could:
@@ -254,20 +254,20 @@ An improved approach could:
   
 This would preserve fine-grained stop-level variation while still benefiting from aggregated features.
 
-9. Additional Features and Alternative Approaches
+4. Additional Features and Alternative Approaches
     
 If repeating the analysis, the following should be prioritised:
-a) More detailed investigation of temporal dimensionality
-Test whether temporal features genuinely improve prediction in either ML or statistical frameworks.
+
+a)More detailed investigation of temporal dimensionality
+- Test whether temporal features genuinely improve prediction in either ML or statistical frameworks.
 
 Explore non-uniform or behaviourally informed time-bins.
 b) Consider fully statistical approaches
-It may be possible to model fare evasion using classical statistical methods if temporal differences are subtle but systematic.
+- It may be possible to model fare evasion using classical statistical methods if temporal differences are subtle but systematic.
 
 c) Incorporate passenger-flow features from the ticket-validations dataset
-
-A heatmap of ticket validations over time would reveal the flow of passengers through the city.
-
+- A heatmap of ticket validations over time would reveal the flow of passengers through the city.
+- 
 For example:
 Morning: peaks at peripheral stops
 Evening: flows concentrate toward central stops
